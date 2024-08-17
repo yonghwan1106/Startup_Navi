@@ -7,6 +7,7 @@ def get_startup_analysis(api_key, idea):
     prompt = f"""As an AI startup analyst, provide a comprehensive analysis for the startup idea: "{idea}". Structure your response in the following format:
 
     ## 1. 시장 동향 분석
+    - 최근 5년간의 연도별 시장 성장률:
     - 현재 국내 및 글로벌 시장 규모 (금액):
     - 주요 소비자 트렌드:
     - 시장을 주도하는 핵심 기술이나 혁신 요소:
@@ -72,7 +73,13 @@ if st.button('분석 시작', key='analyze'):
             except Exception as e:
                 st.error(f'오류가 발생했습니다: {str(e)}')
 
-
+st.markdown("""
+### 사용 방법
+1. Anthropic API 키를 입력하세요.
+2. 분석하고 싶은 창업 아이디어를 입력하세요.
+3. '분석 시작' 버튼을 클릭하세요.
+4. 결과를 기다리세요. 분석에는 약간의 시간이 소요될 수 있습니다.
+""")
 
 st.sidebar.header("About")
 st.sidebar.info(
