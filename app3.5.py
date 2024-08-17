@@ -4,10 +4,12 @@ from anthropic import Anthropic
 def get_startup_analysis(api_key, idea):
     client = Anthropic(api_key=api_key)
     
+    #- 최근 5년간의 연도별 시장 성장률:#
+
     prompt = f"""As an AI startup analyst, provide a comprehensive analysis for the startup idea: "{idea}". Structure your response in the following format:
 
     ## 1. 시장 동향 분석
-    - 최근 5년간의 연도별 시장 성장률:
+
     - 현재 국내 및 글로벌 시장 규모 (금액):
     - 주요 소비자 트렌드:
     - 시장을 주도하는 핵심 기술이나 혁신 요소:
